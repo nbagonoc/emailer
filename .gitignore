@@ -1,4 +1,3 @@
 node_modules
 db_secret_dev.js
-db_secret_dev_remove.js
 /.vscode
