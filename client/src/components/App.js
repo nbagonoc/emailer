@@ -6,8 +6,8 @@ import * as actions from "../actions";
 // Components
 import Header from "./Header";
 import Landing from "./Landing";
-const Dashboard = () => <h2>Dashboard</h2>;
-const SurveyNew = () => <h2>Survey New</h2>;
+import Dashboard from "./Dashboard";
+import Survey from "./Survey";
 
 class App extends Component {
   // LIFECYCLES
@@ -23,7 +23,7 @@ class App extends Component {
           <Route exact path="/" component={Landing} />
           <div className="container">
             <Route exact path="/surveys" component={Dashboard} />
-            <Route path="/surveys/new" component={SurveyNew} />
+            <Route path="/surveys/new" component={Survey} />
           </div>
         </div>
       </BrowserRouter>
