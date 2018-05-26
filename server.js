@@ -42,10 +42,11 @@ require("./routes/authRoutes")(app);
 // billing routes
 require("./routes/billingRoutes")(app);
 
+// serve production assets
+app.use(express.static("client/build"));
+
 // routing for production
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-
   const path = require("path");
   app.get("/*", (req, res) => {
     res.sendfile(path.resolve(__dirname, "../client", "build", "index.html"));
