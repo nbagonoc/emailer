@@ -25,18 +25,16 @@ passport.use(
       // fix google http https proxy issue
       proxy: true
     },
-    (accessToken, refreshToken, profile, done) => {
-      User.findOne({ googleId: profile.id }).then(existingUser => {
-        if (existingUser) {
-          // already have record with the google ID
-          done(null, existingUser);
-        } else {
-          // no user record, create record
-          new User({ googleId: profile.id })
-            .save()
-            .then(user => done(null, user));
-        }
-      });
+    async (accessToken, refreshToken, profile, done) => {
+      const existingUser = await User.findOne({ googleId: profile.id });
+      if (existingUser) {
+        // already have record with the google ID
+        done(null, existingUser);
+      } else {
+        // no user record, create record
+        const user = await new User({ googleId: profile.id }).save();
+        done(null, user);
+      }
     }
   )
 );

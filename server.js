@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cookieSession = require("cookie-session");
 const passport = require("passport");
+const bodyParser = require("body-parser");
 
 const app = express();
 
@@ -32,10 +33,22 @@ app.use(
 // passport
 app.use(passport.initialize());
 app.use(passport.session());
+// body-parser
+app.use(bodyParser.json());
 
 // ROUTES
 // auth route
 require("./routes/authRoutes")(app);
+// billing routes
+require("./routes/billingRoutes")(app);
+
+// routing for production
+if (process.env.NODE_ENV === "production") {
+  const path = require("path");
+  app.get("/*", (req, res) => {
+    res.sendfile(path.resolve(__dirname, "../client", "build", "index.html"));
+  });
+}
 
 // PORT
 const PORT = process.env.PORT || 5000;
