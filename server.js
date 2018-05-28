@@ -8,6 +8,7 @@ const app = express();
 
 // MODELS
 require("./models/User");
+require("./models/Survey");
 
 // CONFIGS
 // DB and secrets
@@ -37,10 +38,9 @@ app.use(passport.session());
 app.use(bodyParser.json());
 
 // ROUTES
-// auth route
 require("./routes/authRoutes")(app);
-// billing routes
 require("./routes/billingRoutes")(app);
+require("./routes/surveyRoutes")(app);
 
 if (process.env.NODE_ENV === "production") {
   // Express will serve up production assets

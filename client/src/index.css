@@ -4,3 +4,6 @@ html,
 .App {
   height: 100%;
 }
+body {
+  color: #555;
+}
