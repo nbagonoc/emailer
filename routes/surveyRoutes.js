@@ -46,7 +46,7 @@ module.exports = app => {
           {
             _id: surveyId,
             recipients: {
-              $eleMatch: { email: email, responded: false }
+              $elemMatch: { email: email, responded: false }
             }
           },
           {
