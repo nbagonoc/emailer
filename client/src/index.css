@@ -7,3 +7,43 @@ html,
 body {
   color: #555;
 }
+
+nav {
+  z-index: 999;
+}
+.carousel {
+  top: -1.5rem;
+  margin-top: -1.5rem;
+}
+/* Carousel height */
+.carousel,
+.carousel-inner,
+.carousel-item {
+  height: 100% !important;
+}
+/* carousel background style */
+.first-slide,
+.second-slide,
+.third-slide {
+  height: 100% !important;
+  position: relative;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -ms-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.carousel-text {
+  position: absolute;
+  width: 80%;
+  top: 50%;
+  left: 50%;
+  -moz-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.carousel-text h1 {
+  text-shadow: 3px 3px 10px #333;
+}

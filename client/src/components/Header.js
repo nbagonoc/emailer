@@ -12,7 +12,7 @@ class Header extends Component {
         return (
           <ul className="navbar-nav ml-auto">
             <li className="nav-item">
-              <a className="nav-link" href="/auth/google">
+              <a className="nav-link text-danger" href="/auth/google">
                 Login with Google
               </a>
             </li>
@@ -41,10 +41,10 @@ class Header extends Component {
 
   render() {
     return (
-      <nav className="navbar navbar-expand-sm navbar-dark bg-info mb-4">
+      <nav className="navbar navbar-expand-sm navbar-light bg-light mb-4">
         <div className="container">
           <Link className="navbar-brand" to="/">
-            Emailer
+            eSurvey
           </Link>
           <button
             className="navbar-toggler"

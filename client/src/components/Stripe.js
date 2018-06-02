@@ -13,7 +13,7 @@ class Stripe extends Component {
         token={token => this.props.handleToken(token)}
         stripeKey={process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY}
       >
-        <button className="btn btn-outline-light" type="button">
+        <button className="btn btn-outline-secondary" type="button">
           <i className="fas fa-plus-circle mr-2" />
           Add Credits <span className="badge">({this.props.auth.credits})</span>
         </button>
